@@ -86,6 +86,9 @@ class _RoompageState extends State<Roompage> {
                                 onTap: () {
                                   Provider.of<chatProviderClass>(context,
                                           listen: false)
+                                      .changethescreen();
+                                  Provider.of<chatProviderClass>(context,
+                                          listen: false)
                                       .changetogroupOrpersonal(isgroup: false);
                                   Provider.of<chatProviderClass>(context,
                                           listen: false)

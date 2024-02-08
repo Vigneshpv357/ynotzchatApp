@@ -11,9 +11,11 @@ class Righttab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     print(Provider.of<chatProviderClass>(context).isgroup);
+    print(
+        "=======================${Provider.of<chatProviderClass>(context).changeScreen}");
     return Container(
         child: Provider.of<chatProviderClass>(context).changeScreen
-            ? Provider.of<chatProviderClass>(context).isgroup!
+            ? Provider.of<chatProviderClass>(context).isgroup
                 ? GroupChatpage(
                     title:
                         Provider.of<chatProviderClass>(context, listen: false)

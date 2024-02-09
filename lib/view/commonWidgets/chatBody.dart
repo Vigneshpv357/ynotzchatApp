@@ -5,24 +5,28 @@ class ChatBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        GridView.builder(
-          gridDelegate:
-              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4),
-          itemBuilder: (context, index) {
-            return Container(
-              child: Image.asset(
-                "assets/background_Image.jpg",
-              ),
-            );
-          },
-        ),
-        Container(
-          height: double.infinity,
-          color: Color.fromARGB(212, 238, 227, 251),
-        ),
-      ],
+    var mq = MediaQuery.sizeOf(context);
+    return Container(
+      width: mq.width - mq.width / 3,
+      child: Stack(
+        children: [
+          GridView.builder(
+            gridDelegate:
+                SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4),
+            itemBuilder: (context, index) {
+              return Container(
+                child: Image.asset(
+                  "assets/background_Image.jpg",
+                ),
+              );
+            },
+          ),
+          Container(
+            height: double.infinity,
+            color: Color.fromARGB(212, 238, 227, 251),
+          ),
+        ],
+      ),
     );
   }
 }

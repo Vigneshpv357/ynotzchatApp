@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/view/ChatPage/groups/container.dart';
 import 'package:flutter_application_1/view/commonWidgets/appBarCommon.dart';
 import 'package:flutter_application_1/view/commonWidgets/chatBody.dart';
 import 'package:flutter_application_1/view/commonWidgets/messageBar.dart';
@@ -11,10 +12,34 @@ class GroupChatpage extends StatelessWidget {
   Widget build(BuildContext context) {
     var mq = MediaQuery.sizeOf(context);
     return Container(
-      color: Colors.green,
       child: Stack(
         children: [
-          ChatBody(),
+          Container(
+            child: Row(
+              children: [
+                Expanded(
+                  child: ChatBody(),
+                ),
+                Container(
+                    decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.2),
+                          spreadRadius: 2,
+                          blurRadius: 5,
+                          offset: Offset(0, 2),
+                        ),
+                      ],
+                      border: Border.all(color: Colors.transparent),
+                      borderRadius: BorderRadius.circular(15),
+                      color: Colors.white,
+                    ),
+                    width: mq.width * .15,
+                    height: mq.height - mq.height * .06 - mq.height * .05,
+                    child: RoomMembersContainer())
+              ],
+            ),
+          ),
           AppbarCommon(
             ismembers: true,
             isCamera: false,

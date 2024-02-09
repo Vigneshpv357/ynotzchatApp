@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/view/ChatPage/chatpage.dart';
 import 'package:flutter_application_1/view/commonWidgets/appBarCommon.dart';
-import 'package:flutter_application_1/view/commonWidgets/searchbar.dart';
 import 'package:flutter_application_1/view/RoomsPage/rooms.dart';
-import 'package:flutter_application_1/view/colorConstants.dart';
 
 class LeftTab extends StatelessWidget {
   const LeftTab({super.key});
@@ -12,8 +10,19 @@ class LeftTab extends StatelessWidget {
   Widget build(BuildContext context) {
     var mq = MediaQuery.sizeOf(context);
     return Container(
+      decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.2),
+            spreadRadius: 2,
+            blurRadius: 5,
+            offset: Offset(0, 3),
+          ),
+        ],
+        borderRadius: BorderRadius.circular(15),
+        color: Colors.white,
+      ),
       height: mq.height,
-      color: Colorsused.secondaryColor,
       child: DefaultTabController(
         length: 2,
         child: Column(
@@ -56,7 +65,7 @@ class LeftTab extends StatelessWidget {
             ),
             Expanded(
               child: TabBarView(
-                children: [Chatpage(), Roompage()],
+                children: [Container(child: Chatpage()), Roompage()],
               ),
             )
           ],

@@ -45,66 +45,68 @@ class _RoompageState extends State<Roompage> {
         Flexible(
           child: Row(
             children: [
-              Container(
-                width: MediaQuery.sizeOf(context).width / 3,
-                color: Colorsused.secondaryColor,
-                child: ListView.builder(
-                  itemCount: dropdownItems.keys.length,
-                  itemBuilder: (context, index) {
-                    String heading = dropdownItems.keys.elementAt(index);
-                    Map<String, List<String>> subItems =
-                        dropdownItems[heading] ?? {};
-
-                    return ExpansionTile(
-                      title: Text(
-                        heading,
-                      ),
-                      textColor: isexpanded[index]
-                          ? Colorsused.primaryColor
-                          : Colors.black,
-                      collapsedIconColor: isexpanded[index]
-                          ? Colors.black
-                          : Colorsused.primaryColor,
-                      onExpansionChanged: (value) {
-                        setState(() {
-                          isexpanded[index] = value;
-                        });
-                      },
-                      initiallyExpanded: false,
-                      children: subItems.keys.map((subItem) {
-                        return ExpansionTile(
-                          collapsedTextColor: Colors.black,
-                          title: Text(
-                            subItem,
-                          ),
-                          children: subItems[subItem]!.map((room) {
-                            return ListTile(
-                              title: Text(
-                                room,
-                              ),
-                              trailing: InkWell(
-                                onTap: () {
-                                  Provider.of<chatProviderClass>(context,
-                                          listen: false)
-                                      .changethescreen();
-                                  Provider.of<chatProviderClass>(context,
-                                          listen: false)
-                                      .changetogroupOrpersonal(isgroup: false);
-                                  Provider.of<chatProviderClass>(context,
-                                          listen: false)
-                                      .item = room;
-                                },
-                                child: Icon(
-                                  Icons.send,
-                                  color: Colorsused.primaryColor,
+              Expanded(
+                child: Container(
+                  width: MediaQuery.sizeOf(context).width / 2.5,
+                  color: Colorsused.secondaryColor,
+                  child: ListView.builder(
+                    itemCount: dropdownItems.keys.length,
+                    itemBuilder: (context, index) {
+                      String heading = dropdownItems.keys.elementAt(index);
+                      Map<String, List<String>> subItems =
+                          dropdownItems[heading] ?? {};
+                
+                      return ExpansionTile(
+                        title: Text(
+                          heading,
+                        ),
+                        textColor: isexpanded[index]
+                            ? Colorsused.primaryColor
+                            : Colors.black,
+                        collapsedIconColor: isexpanded[index]
+                            ? Colors.black
+                            : Colorsused.primaryColor,
+                        onExpansionChanged: (value) {
+                          setState(() {
+                            isexpanded[index] = value;
+                          });
+                        },
+                        initiallyExpanded: false,
+                        children: subItems.keys.map((subItem) {
+                          return ExpansionTile(
+                            collapsedTextColor: Colors.black,
+                            title: Text(
+                              subItem,
+                            ),
+                            children: subItems[subItem]!.map((room) {
+                              return ListTile(
+                                title: Text(
+                                  room,
                                 ),
-                              ),
-                            );
-                          }).toList(),
-                        );
-                      }).toList(),
-                    );
-                  },
+                                trailing: InkWell(
+                                  onTap: () {
+                                    Provider.of<chatProviderClass>(context,
+                                            listen: false)
+                                        .changethescreen();
+                                    Provider.of<chatProviderClass>(context,
+                                            listen: false)
+                                        .changetogroupOrpersonal(isgroup: false);
+                                    Provider.of<chatProviderClass>(context,
+                                            listen: false)
+                                        .item = room;
+                                  },
+                                  child: Icon(
+                                    Icons.send,
+                                    color: Colorsused.primaryColor,
+                                  ),
+                                ),
+                              );
+                            }).toList(),
+                          );
+                        }).toList(),
+                      );
+                    },
+                  ),
                 ),
               ),
             ],

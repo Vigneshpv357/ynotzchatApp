@@ -34,7 +34,7 @@ class GroupChatpage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(15),
                       color: Colors.white,
                     ),
-                    width: mq.width * .15,
+                    width: mq.width * .22,
                     height: mq.height - mq.height * .06 - mq.height * .05,
                     child: RoomMembersContainer())
               ],

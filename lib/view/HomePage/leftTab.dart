@@ -65,7 +65,7 @@ class LeftTab extends StatelessWidget {
             ),
             Expanded(
               child: TabBarView(
-                children: [Container(child: Chatpage()), Roompage()],
+                children: [Expanded(child: Chatpage()), Roompage()],
               ),
             )
           ],

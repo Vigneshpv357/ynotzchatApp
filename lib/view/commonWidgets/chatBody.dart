@@ -7,7 +7,7 @@ class ChatBody extends StatelessWidget {
   Widget build(BuildContext context) {
     var mq = MediaQuery.sizeOf(context);
     return Container(
-      width: mq.width - mq.width / 3,
+      width: mq.width - mq.width / 3.5,
       child: Stack(
         children: [
           GridView.builder(

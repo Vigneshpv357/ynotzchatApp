@@ -20,7 +20,7 @@ class PersonalChatpage extends StatelessWidget {
             isCamera: true,
             iscall: true,
             ismore: true,
-            title: "ashna",
+            title: "Juile",
             width: mq.width - mq.width / 3,
           ),
           Positioned(left: 0, right: 0, bottom: 0, child: MessageBar())

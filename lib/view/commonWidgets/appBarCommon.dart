@@ -24,7 +24,7 @@ class AppbarCommon extends StatelessWidget {
 
     return Container(
       height: mq.height * .06,
-      width: this.width,
+      width: this.width* 06,
       child: Row(
         children: [
           Padding(
@@ -47,7 +47,9 @@ class AppbarCommon extends StatelessWidget {
                       ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Text(title!),
+                        child:Text(title!,  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16)),
                       ),
                     ],
                   ),

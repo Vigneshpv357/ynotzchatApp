@@ -11,11 +11,7 @@ class InitialChatPage extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(
-            Icons.message,
-            color: Colorsused.primaryColor,
-            size: 80,
-          ),
+          Image.asset("assets/messenger.png"),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
@@ -26,21 +22,10 @@ class InitialChatPage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
-              "Send Message and photos to your best one's",
+              "Send private photos and messages to a friend or group",
             ),
           ),
-          Container(
-            color: Colorsused.primaryColor,
-            height: mq.height * .05,
-            width: mq.width * .1,
-            child: Center(
-                child: Text(
-              "Sign Up",
-              style: TextStyle(
-                  fontWeight: FontWeight.w900,
-                  color: Colorsused.secondaryColor),
-            )),
-          )
+         
         ],
       ),
     );

@@ -14,13 +14,13 @@ class Homepage extends StatelessWidget {
         child: Row(children: [
           Container(
             height: MediaQuery.sizeOf(context).height,
-            width: MediaQuery.sizeOf(context).width / 3,
+            width: MediaQuery.sizeOf(context).width / 3.5,
             child: LeftTab(),
           ),
           Container(
             height: MediaQuery.sizeOf(context).height,
             width: MediaQuery.sizeOf(context).width -
-                MediaQuery.sizeOf(context).width / 3,
+                MediaQuery.sizeOf(context).width / 3.5,
             child: Righttab(),
           )
         ]),
